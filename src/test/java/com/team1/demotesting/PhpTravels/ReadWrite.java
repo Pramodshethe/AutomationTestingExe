@@ -11,6 +11,16 @@ public class ReadWrite {
 	
 	String filePath = "D:\\workspace\\PhpTravels\\src\\test\\java\\com\\team1\\xlImport\\data.xlsx";
 	
+	/*
+     * ********************************************************************
+     * Method Name                    : 
+     * Created By                     : Pramodkumar Shethe
+     * Created Date                   : 28th Aug 2018
+     * Modified Date                  : 
+     * Parameters                     : 
+     * Purpose                        : To read the data from the Excel Sheet   
+     * **********************************************************************
+     */
 	
 	public String readExcel(int i,int j) throws Exception{
 		
@@ -23,7 +33,16 @@ public class ReadWrite {
 	}
 	
 	
-	
+	/*
+     * ********************************************************************
+     * Method Name                    : 
+     * Created By                     : Pramodkumar Shethe
+     * Created Date                   : 28th Aug 2018
+     * Modified Date                  : 
+     * Parameters                     : 
+     * Purpose                        : To write the data to the Excel Sheet   
+     * **********************************************************************
+     */
 	
 	public void writeExcel(int i,String name)throws Exception {
 		

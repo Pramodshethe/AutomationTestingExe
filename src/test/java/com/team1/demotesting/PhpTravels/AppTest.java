@@ -18,18 +18,10 @@ public class AppTest
 {
     public static void main( String[] args )
     {
-    	/*
-         * ********************************************************************
-         * Method Name                    : 
-         * Created By                     : Pramodkumar Shethe
-         * Created Date                   : 22th Aug 2018
-         * Modified Date                  : 28th Aug 2018
-         * Parameters                     : 
-         * Purpose                        : open browser, website and giving login credentials and login   
-         * ******************************************************************
-         */
+    	
 		   	CrossFunctions crossFunctions = new CrossFunctions();
     	try {
+    		
     		System.setProperty("WebDriver.Chrome.driver", "D:/workspace/PhpTravels/chromedriver.exe");
     	
     	
@@ -40,8 +32,11 @@ public class AppTest
     		XSSFSheet sheet = wb.getSheet("Sheet1");
     		crossFunctions.oBrowser.get("https://www.phptravels.net/admin");
     		Thread.sleep(3000);
-        
-    		int i =1;
+    		
+    		
+    		int i = 1;
+    		int m =sheet.getPhysicalNumberOfRows();
+    		System.out.println(i);
     		do {
        		
        		
@@ -56,7 +51,7 @@ public class AppTest
     			crossFunctions.returnValue(a);
     			i++;
         
-    			}while(i<=2);
+    			}while(i<=m);
 	            
         
     		}catch(Exception e) {
