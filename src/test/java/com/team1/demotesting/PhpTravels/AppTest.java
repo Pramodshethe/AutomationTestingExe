@@ -1,24 +1,17 @@
 package com.team1.demotesting.PhpTravels;
 
 import java.io.FileInputStream;
-import java.io.FileOutputStream;
-
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.openqa.selenium.By;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
 
 
 public class AppTest 
 {
     public static void main( String[] args )
     {
-    	
+    		
 		   	CrossFunctions crossFunctions = new CrossFunctions();
     	try {
     		
@@ -51,11 +44,11 @@ public class AppTest
     			crossFunctions.returnValue(a);
     			i++;
         
-    			}while(i<=m);
-	            
-        
+    			}while(i < m);
+	                		
     		}catch(Exception e) {
     		e.printStackTrace();
     	}
+    
     }
 }

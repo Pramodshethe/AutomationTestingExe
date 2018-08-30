@@ -2,10 +2,9 @@ package com.team1.demotesting.PhpTravels;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import junit.framework.Assert;
+
 
 public class CrossFunctions extends ReadWrite {
 	
@@ -14,9 +13,9 @@ public class CrossFunctions extends ReadWrite {
 	/*
      * ********************************************************************
      * Method Name                    : 
-     * Created By                     : Pramodkumar Shethe
+     * Created By                     : Team1
      * Created Date                   : 26th Aug 2018
-     * Modified Date                  : 
+     * Modified Date                  : 30th Aug 2018
      * Parameters                     : 
      * Purpose                        : it carries out the entire operations 
      * **********************************************************************
@@ -28,13 +27,19 @@ public class CrossFunctions extends ReadWrite {
 		
 		try {
 			String got_title = oBrowser.getTitle();
-			System.out.println("initial: "+got_title);
+			System.out.println("First: "+got_title);
 	    	String check = "DASHBOARD";
 	    	
 			if(got_title.equals(check)) {
 				oBrowser.findElement(By.xpath("/html/body/div[2]/aside/div/div[2]/div/div[2]/div/a")).click();
-				
-			}else {		
+				Thread.sleep(1000);
+								} 
+			
+			String mytitle = oBrowser.getTitle();
+			String expected = "Administator Login";
+			System.out.println("second: "+mytitle);
+			if(mytitle.equals(expected))
+			{		
     	
 				String str = readwrite.readExcel(i,1);
 				String str1 = readwrite.readExcel(i,2);
@@ -53,17 +58,19 @@ public class CrossFunctions extends ReadWrite {
     	                
 				oBrowser.findElement(By.xpath("/html/body/div/form[1]/button/span[1]")).click();
 				Thread.sleep(3000);
-				System.out.println("3:Loged in and Navigating to main page");
-        
-				Thread.sleep(3000);
+				
 		
-				String mytitle = oBrowser.getTitle();
-				String expected = "Dashboard";
-				System.out.println("second: "+mytitle);
-				if(mytitle.equals(expected))
-				{
-        
-					oBrowser.findElement(By.xpath("//*[@id=\"social-sidebar-menu\"]/li[5]/a")).click();
+				
+				String mytitle1 = oBrowser.getTitle();
+				String expected1 = "Dashboard";
+				System.out.println("third: "+mytitle1);
+				
+				if(mytitle1.equals (expected1))
+				{	
+					System.out.println("3:Loged in and Navigating to main page");
+					Thread.sleep(1000);
+					
+   					oBrowser.findElement(By.xpath("//*[@id=\"social-sidebar-menu\"]/li[5]/a")).click();
 					Thread.sleep(2000);
 					System.out.println("4:Accounts dropdown clicked");
         
@@ -122,8 +129,9 @@ public class CrossFunctions extends ReadWrite {
 					
 					  }	
 				}
-    		}catch(Exception e){
-			e.printStackTrace();
-		}     	
+		    		
+			}catch(Exception e){
+				e.printStackTrace();
+				}     	
 	}
 }
